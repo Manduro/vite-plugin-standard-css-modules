@@ -72,7 +72,6 @@ export function standardCssModules(options) {
 
 	const root = searchForWorkspaceRoot(process.cwd());
 
-	console.log(root);
 	const filter = createFilter(
 		options?.include ?? defaultOptions.include,
 		options?.exclude ?? defaultOptions.exclude,
@@ -108,7 +107,6 @@ export function standardCssModules(options) {
 			// const idRelative = idNoParams.replace(process.cwd(), '');
 			if (!modulePath?.id || filter(idNoParams) === false) return null;
 
-			console.log({ modulePath });
 			const searchParams = new URLSearchParams(params);
 			searchParams.set('raw', '');
 			searchParams.set('cssStandardModule', '');
@@ -133,7 +131,6 @@ export function standardCssModules(options) {
 					rIdOptions,
 				});
 
-			console.log({ modulePath });
 			return modulePath;
 		},
 
